@@ -2186,9 +2186,7 @@ JitsiConference.prototype._onIncomingCallP2P = function(jingleSession, jingleOff
             reasonDescription: 'P2P disabled',
             errorMsg: 'P2P across two endpoints in different SDP modes is disabled'
         };
-    } else if ((!this.isP2PEnabled() && !this.isP2PTestModeEnabled())
-        || browser.isFirefox()
-        || browser.isWebKitBased()) {
+    } else if ((!this.isP2PEnabled() && !this.isP2PTestModeEnabled())) {
         rejectReason = {
             reason: 'decline',
             reasonDescription: 'P2P disabled',
@@ -3456,8 +3454,6 @@ JitsiConference.prototype._suspendMediaTransferForJvbConnection = function() {
 JitsiConference.prototype._maybeStartOrStopP2P = function(userLeftEvent) {
     if (!this.isP2PEnabled()
             || this.isP2PTestModeEnabled()
-            || browser.isFirefox()
-            || browser.isWebKitBased()
             || this.isE2EEEnabled()) {
         logger.info('Auto P2P disabled');
 
