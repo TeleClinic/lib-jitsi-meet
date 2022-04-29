@@ -413,7 +413,7 @@ JitsiConference.prototype._init = function(options = {}) {
             config,
             (message, to) => {
                 try {
-                    this.sendMessage(message, to, true /* sendThroughVideobridge */);
+                    this.sendMessage(message, to, false /* sendThroughVideobridge */);
                 } catch (error) {
                     logger.warn('Failed to send E2E ping request or response.', error && error.msg);
                 }
@@ -2349,13 +2349,13 @@ JitsiConference.prototype._setBridgeChannel = function(offerIq, pc) {
         wsUrl = webSocket[0].getAttribute('url');
     }
 
-    if (wsUrl) {
-        // If the offer contains a websocket use it.
-        this.rtc.initializeBridgeChannel(null, wsUrl);
-    } else {
-        // Otherwise, fall back to an attempt to use SCTP.
-        this.rtc.initializeBridgeChannel(pc, null);
-    }
+    // if (wsUrl) {
+    //     // If the offer contains a websocket use it.
+    //     this.rtc.initializeBridgeChannel(null, wsUrl);
+    // } else {
+    //     // Otherwise, fall back to an attempt to use SCTP.
+    //     this.rtc.initializeBridgeChannel(pc, null);
+    // }
 };
 
 /**
