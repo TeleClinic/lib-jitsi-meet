@@ -62,6 +62,7 @@ export default class JingleConnectionPlugin extends ConnectionPlugin {
      * to the p2p and the jvb <tt>PeerConnection</tt>.
      */
     constructor(xmpp, eventEmitter, iceConfig) {
+        console.error("new lib-jitsi-meet")
         super();
         this.xmpp = xmpp;
         this.eventEmitter = eventEmitter;
