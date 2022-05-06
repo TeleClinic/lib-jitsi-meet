@@ -2233,7 +2233,7 @@ JitsiConference.prototype.onIncomingCall = function(jingleSession, jingleOffer, 
 
             return;
         }
-        this._acceptJvbIncomingCall(jingleSession, jingleOffer, now);
+        // this._acceptJvbIncomingCall(jingleSession, jingleOffer, now);
     }
 };
 
